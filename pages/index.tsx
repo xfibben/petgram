@@ -1,18 +1,15 @@
 import Head from "next/head";
-import Image from "next/image";
+import Categories from "./components/categories";
 import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
+import Navbar from "./components/navbar/index";
+
 import { TextField, Button } from "@mui/material";
 import { useEffect, useState } from "react";
-import internal from "stream";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [number, setNumber] = useState(0);
-  const click = (n:number): void => {
-    setNumber(number + n);
-  };
+
 
   return (
     <>
@@ -23,18 +20,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={"w-full grid content-center p-24"}>
-        <TextField
-          id="outlined-basic"
-          label="Ingrese un numero"
-          variant="outlined"
-          value={number}
-        />
-        <Button variant="outlined" onClick={click(1)}>
-          +1
-        </Button>
-        <Button variant="outlined" onClick={click(2)}>
-          +2
-        </Button>
+          <Navbar/>
+
+        <h1>Instagram de puno</h1>
+          <Categories/>
       </main>
     </>
   );
