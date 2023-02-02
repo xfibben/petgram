@@ -1,7 +1,10 @@
+
 import Head from "next/head";
 import Categories from "./components/categories";
 import { Inter } from "@next/font/google";
 import Navbar from "./components/navbar/index";
+import Posts from "@/pages/components/posts";
+import Logo from "@/pages/components/logo";
 
 import { TextField, Button } from "@mui/material";
 import { useEffect, useState } from "react";
@@ -19,11 +22,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={"w-full grid content-center p-24"}>
+      <main className={"w-full grid content-center p-10"}>
+          <Logo/>
           <Navbar/>
 
         <h1>Instagram de puno</h1>
           <Categories/>
+          <Posts/>
       </main>
     </>
   );
